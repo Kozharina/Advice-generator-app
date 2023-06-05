@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;700;800&family=League+Spartan:wght@700&family=Lexend+Deca&family=Manrope:wght@800&display=swap');
+:root{
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Dark-Blue);
+    font-family: 'Manrope', sans-serif;
+}
+.card{
+    max-width: 32rem;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    background-color: var(--Dark-Grayish-Blue);
+     text-align: center;
+     position: relative;
+     
+}
+.card h1{
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+   
+    text-transform: uppercase;
+    color: var(--Neon-Green);
+}
+.card p{
+    font-size: 1.75rem;
+    color: var(--Light-Cyan);
+}
+.card-img{
+    background: url('./images/pattern-divider-desktop.svg') no-repeat center;
+    width: 100%;
+    height: 2rem;
+}
+
+.card button[aria-label="generate"]{
+    background: url('./images/icon-dice.svg') no-repeat center;
+    background-color: var(--Neon-Green);
+    width: 4rem;
+    height: 4rem; 
+    border-radius: 50%;
+    border: none;
+    padding: 0.7rem;
+    position: absolute;
+    top:90%;
+    right: 44%;
+    cursor: pointer;
+    -webkit-box-shadow: inset 0 -2px #07e2a8;
+}
+
+.card button[aria-label="generate"]:hover{
+  filter: drop-shadow(10px 1px 30px var(--Neon-Green)) invert(5%);
+  transform: translate(2px, 1px);
+}
+
+.stars, .twinkling {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(https://i.postimg.cc/hhFD7Nkf/apps-47636-13819498107583324-fb06b53a-4974-4acb-85e6-f6f363f85ab6-edec48d0-ec35-4a1f-8bf5-c455987b4a.png) repeat top center;
+  z-index: 0;
+}
+
+.twinkling {
+  background-image: url(https://i.postimg.cc/CLpNr4PF/twinkling.png);
+  animation: 3s twinkle infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes twinkle {
+  from {backrgound-position: 0}
+  to {background-position: -100px 0}
+}
+
+@media (min-width:390px){
+    .card{
+        width: 90%;
+    }
+    .card-img{
+        background: url('./images/pattern-divider-mobile.svg') no-repeat center;
+    }
+    .card button[aria-label="generate"]{
+        transform: translateX(15%);
+    }
+}
